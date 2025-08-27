@@ -28,7 +28,7 @@ ifdebugdedected(void)
 
 tüm araçları secuiry klaösründe bulablirsiniz. temel metodlar şunlar:
 
-✨✨
+✨
   ```bash 
   CheckProcessesNames();
 ```
@@ -57,6 +57,22 @@ bool CheckDLLHash(const char* file_path)
 
 filehashcheck.cpp'De bulunur. yüklediğinz dosyanın exe mi yoksa lic dosyası mı olduğnu kontrol edip beklenen değer ile karşılatırır. hesaplanan değeri debug olarak görüp kodlarda manuel değiştirin.
 
+lütfen hashutils.cpp dosyasını kontrol edin.
+
+```bash 
+
+```
+
+✨
+
+```bash 
+GetLastWriteTime()
+
+```
+
+TimeCheck kalsöründe bulunur. license.lic dosyamıızn ne zmaan değiştirildğinie bakıyoruz.
+
+✨
 
 
 
@@ -66,14 +82,5 @@ filehashcheck.cpp'De bulunur. yüklediğinz dosyanın exe mi yoksa lic dosyası 
 **İstemci:** C++
 
 **Gerekli Kütüphaneler:** -lBcrypt -mconsole
-
-  
-## Ortam Değişkenleri
-
-Bu projeyi çalıştırmak için aşağıdaki ortam değişkenlerini .env dosyanıza eklemeniz gerekecek
-
-`API_KEY`
-
-`ANOTHER_API_KEY`
 
   
