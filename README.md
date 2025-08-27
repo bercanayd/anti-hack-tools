@@ -3,9 +3,9 @@
 
 bu proje programınızın debugger kullanılarak çözülmesinin engellenmesi için gereken basit araçları içerir:
 
--Debugger portunun dinlenyicisi
+-Debugger portunun dinleyicisi
 
--pencere isimlerinden zararlı yazılımların tespit edilmesi.
+-pencere isimleri alınarak zararlı yazılımların tespit edilmesi.
 
 -exe dosyasının hash ile şifresinin alınarak uygulama açıldığında kontrol edilmesi.
 
@@ -16,16 +16,17 @@ bu proje programınızın debugger kullanılarak çözülmesinin engellenmesi i�
 
 ## Bilgisayarınızda Çalıştırın
 
-Projeyi klonlayın ve programınızn olduğu dosyaya atın.
+Projeyi klonlayın ve programınızn olduğu dosyaya atın. derleme için -lBcrypt -mconsole da gerkeiyor.
 
-bu program örnek lisans dosyası da barındırmaktadır. bu lisans dosyasına son tarihi yazabilirsiniz.
+bu program örnek lisans dosyası da barındırmaktadır. bu lisans dosyasına son tarihi yazabilirsiniz. zorunlu değil bu.
 
-temiz kullanmım açısından main.cpp kullanmanız gerekeiyor. bu dosyada InitExport metodunu göreceksiniz. bu metodun içine çalıştırmak istediğiniz metodu ekleyin. temel metodlar şunlar:
-  
+temiz kullanmım açısından ana dizindeki main.cpp kullanmanız gerekeiyor. bu dosyada InitExport metodunu göreceksiniz. bu metodun içine çalıştırmak istediğiniz metodu ekleyin. security kalsöründe bulacağınız temel metodlar şunlar:
+
+✨
   ```bash 
   CheckProcessesNames();
 ```
-windows apisi kullnarak pencere isimleirnden çalışan dosyaları kontrol eder. çalışan dosyaların listesi antidebug.cpp'de aşağıdaki kısıma eklenmelidir.
+windows apisi kullnarak pencere isimleirnden çalışan dosyaları kontrol eder. çalışan dosyaların listesi antidebug.cpp'de aşağıdaki kısıma eklenmelidir:
 
 ```bash 
 const std::string antidebugProcessName[] = {
@@ -33,6 +34,15 @@ const std::string antidebugProcessName[] = {
     "spotify"
 };
 ```
+
+
+✨ 
+```bash 
+void checkdebugport(void)
+```
+
+antidebugger klaösründe bulunur ve debug portlarını dinler. debug bulunduğunda ne yapılacağını belirlemek isityorsanız aynı dosyadaki ifdebugdedected() metoduna yapılmasını isteidklerinizi yazın.
+
 
 
 
@@ -89,5 +99,14 @@ function App() {
   return <Component />
 }
 ```
+
+  
+## Ortam Değişkenleri
+
+Bu projeyi çalıştırmak için aşağıdaki ortam değişkenlerini .env dosyanıza eklemeniz gerekecek
+
+`API_KEY`
+
+`ANOTHER_API_KEY`
 
   
