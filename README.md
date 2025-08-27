@@ -83,4 +83,5 @@ TimeCheck kalsöründe bulunur. license.lic dosyamıızn ne zmaan değiştirild�
 
 **Gerekli Kütüphaneler:** -lBcrypt -mconsole
 
-  
+  > [!NOT]
+> L  ütfen daha fazla bilgi için admine danıiş
