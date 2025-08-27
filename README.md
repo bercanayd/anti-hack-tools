@@ -22,7 +22,7 @@ bu program örnek lisans dosyası da barındırmaktadır. bu lisans dosyasına s
 
 temiz kullanmım açısından ana dizindeki main.cpp kullanmanız gerekeiyor. bu dosyada InitExport metodunu göreceksiniz. bu metodun içine çalıştırmak istediğiniz metodu ekleyin ve programnızda direkt bu metodu çağırın. buradaki diğer metod: 
   ```bash 
-void ifdebugdedected(void)
+ifdebugdedected(void)
 ```
 şüpheli durum tespit edildğimde ne yapacanıza buradan karar verin.
 
@@ -61,18 +61,6 @@ filehashcheck.cpp'De bulunur. yüklediğinz dosyanın exe mi yoksa lic dosyası 
 
 
 
-## Destek
-
-Destek için fake@fake.com adresine e-posta gönderin veya Slack kanalımıza katılın.
-
-  
-## İlişkili Projeler
-
-İşte bazı ilgili projeler
-
-[Awesome README](https://github.com/matiassingers/awesome-readme)
-
-  
 ## Kullanılan Teknolojiler
 
 **İstemci:** C++
