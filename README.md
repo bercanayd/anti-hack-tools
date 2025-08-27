@@ -20,9 +20,15 @@ Projeyi klonlayın ve programınızn olduğu dosyaya atın. derleme için -lBcry
 
 bu program örnek lisans dosyası da barındırmaktadır. bu lisans dosyasına son tarihi yazabilirsiniz. zorunlu değil bu.
 
-temiz kullanmım açısından ana dizindeki main.cpp kullanmanız gerekeiyor. bu dosyada InitExport metodunu göreceksiniz. bu metodun içine çalıştırmak istediğiniz metodu ekleyin. security kalsöründe bulacağınız temel metodlar şunlar:
+temiz kullanmım açısından ana dizindeki main.cpp kullanmanız gerekeiyor. bu dosyada InitExport metodunu göreceksiniz. bu metodun içine çalıştırmak istediğiniz metodu ekleyin ve programnızda direkt bu metodu çağırın. buradaki diğer metod: 
+  ```bash 
+void ifdebugdedected(void)
+```
+şüpheli durum tespit edildğimde ne yapacanıza buradan karar verin.
 
-✨
+tüm araçları secuiry klaösründe bulablirsiniz. temel metodlar şunlar:
+
+✨✨
   ```bash 
   CheckProcessesNames();
 ```
@@ -43,6 +49,13 @@ void checkdebugport(void)
 
 antidebugger klaösründe bulunur ve debug portlarını dinler. debug bulunduğunda ne yapılacağını belirlemek isityorsanız aynı dosyadaki ifdebugdedected() metoduna yapılmasını isteidklerinizi yazın.
 
+✨ 
+
+```bash 
+bool CheckDLLHash(const char* file_path)
+```
+
+filehashcheck.cpp'De bulunur. yüklediğinz dosyanın exe mi yoksa lic dosyası mı olduğnu kontrol edip beklenen değer ile karşılatırır. hesaplanan değeri debug olarak görüp kodlarda manuel değiştirin.
 
 
 
@@ -65,40 +78,6 @@ Destek için fake@fake.com adresine e-posta gönderin veya Slack kanalımıza ka
 **İstemci:** C++
 
 **Gerekli Kütüphaneler:** -lBcrypt -mconsole
-
-  
-## Demo
-
-Demoya gif veya bağlantı ekleyin
-
-  
-## Yükleme 
-
-benim-projem'i npm kullanarak yükleyin
-
-```bash 
-  npm install my-project
-  cd my-project
-```
-    
-## Testler
-
-Testleri çalıştırmak için aşağıdaki komutu çalıştırın
-
-```bash
-  npm run test
-```
-
-  
-## Kullanım/Örnekler
-
-```javascript
-import Component from 'benim-projem'
-
-function App() {
-  return <Component />
-}
-```
 
   
 ## Ortam Değişkenleri
