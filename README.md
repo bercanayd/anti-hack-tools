@@ -1,6 +1,6 @@
 > [!NOT]
 > Lütfen daha fazla bilgi için admine danıiş
->  Lütfen daha fazla bilgi için admine danıiş
+
 
 
 # Hackerlara karşı araç takımı
