@@ -1,89 +1,55 @@
-> [!NOT]
-> Lütfen daha fazla bilgi için admine danıiş
+# Professional Security Tool
 
+This project is a C++ based security tool that provides a set of features to protect applications from reverse engineering and tampering. It is designed to be used as a DLL that can be integrated into other applications.
 
+## Features
 
-# Hackerlara karşı araç takımı
+*   **Anti-Debugging:** Detects if the application is being debugged.
+*   **License Control:** Provides a simple license checking mechanism.
+*   **File Integrity Check:** Verifies the integrity of files using SHA-256 and CRC32 hashes.
+*   **Runtime Protection:** Protects the application from runtime memory patching.
+*   **Time-based Restrictions:** Allows for time-based restrictions on the application's usage.
 
-bu proje programınızın debugger kullanılarak çözülmesinin engellenmesi için gereken basit araçları içerir:
+## Building the Project
 
--Debugger portunun dinleyicisi
+This project uses CMake to generate the build files. To build the project, follow these steps:
 
--pencere isimleri alınarak zararlı yazılımların tespit edilmesi.
+1.  **Create a build directory:**
+    ```bash
+    mkdir build
+    ```
 
--exe dosyasının hash ile şifresinin alınarak uygulama açıldığında kontrol edilmesi.
+2.  **Navigate to the build directory:**
+    ```bash
+    cd build
+    ```
 
--lisans anahtarından zaman kontrolü (opsiyonel)
+3.  **Run CMake to generate the build files:**
+    ```bash
+    cmake ..
+    ```
 
+4.  **Build the project:**
+    ```bash
+    make
+    ```
 
+This will build the `SecurityTool` library (e.g., `libSecurityTool.so` on Linux or `SecurityTool.dll` on Windows) and the `TestRunner` executable.
 
+## Usage
 
-## Bilgisayarınızda Çalıştırın
+### SecurityTool Library
 
-Projeyi klonlayın ve programınızn olduğu dosyaya atın. derleme için -lBcrypt -mconsole da gerkeiyor.
+The `SecurityTool` library can be linked against your application to use its security features. The library exports the following functions:
 
-bu program örnek lisans dosyası da barındırmaktadır. bu lisans dosyasına son tarihi yazabilirsiniz. zorunlu değil bu.
+*   `void InitExport(void)`: Initializes the security features.
+*   `int GetLicenseStatus(void)`: Returns the current license status.
+*   `int GetDebuggerTools(void)`: Returns the debugger status.
 
-temiz kullanmım açısından ana dizindeki main.cpp kullanmanız gerekeiyor. bu dosyada InitExport metodunu göreceksiniz. bu metodun içine çalıştırmak istediğiniz metodu ekleyin ve programnızda direkt bu metodu çağırın. buradaki diğer metod: 
-  ```bash 
-ifdebugdedected(void)
-```
-şüpheli durum tespit edildğimde ne yapacanıza buradan karar verin.
+### TestRunner Executable
 
-tüm araçları secuiry klaösründe bulablirsiniz. temel metodlar şunlar:
+The `TestRunner` executable is a simple command-line application that demonstrates how to use the `SecurityTool` library. It initializes the library and prints the license and debugger status.
 
-✨
-  ```bash 
-  CheckProcessesNames();
-```
-windows apisi kullnarak pencere isimleirnden çalışan dosyaları kontrol eder. çalışan dosyaların listesi antidebug.cpp'de aşağıdaki kısıma eklenmelidir:
+## Known Issues
 
-```bash 
-const std::string antidebugProcessName[] = {
-    "spotify.exe",
-    "spotify"
-};
-```
-
-
-✨ 
-```bash 
-void checkdebugport(void)
-```
-
-antidebugger klaösründe bulunur ve debug portlarını dinler. debug bulunduğunda ne yapılacağını belirlemek isityorsanız aynı dosyadaki ifdebugdedected() metoduna yapılmasını isteidklerinizi yazın.
-
-✨ 
-
-```bash 
-bool CheckDLLHash(const char* file_path)
-```
-
-filehashcheck.cpp'De bulunur. yüklediğinz dosyanın exe mi yoksa lic dosyası mı olduğnu kontrol edip beklenen değer ile karşılatırır. hesaplanan değeri debug olarak görüp kodlarda manuel değiştirin.
-
-lütfen hashutils.cpp dosyasını kontrol edin.
-
-```bash 
-
-```
-
-✨
-
-```bash 
-GetLastWriteTime()
-
-```
-
-TimeCheck kalsöründe bulunur. license.lic dosyamıızn ne zmaan değiştirildğinie bakıyoruz.
-
-✨
-
-
-
-
-## Kullanılan Teknolojiler
-
-**İstemci:** C++
-
-**Gerekli Kütüphaneler:** -lBcrypt -mconsole
-
+*   The file `kılavuz.txt` could not be deleted due to an issue with the tooling handling Unicode characters in filenames. This file can be safely ignored or deleted manually.
