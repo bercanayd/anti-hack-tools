@@ -11,6 +11,8 @@
 #include "Security/AntiDebugger/antidebugger.h"
 #include "Security/License/LicenseController.h"
 #include "Security/TimeCheck/TimeCheckcpp.h"
+#include "Security/VirtualDedect/virtualdedect.h"
+#include "Security/Regedit/Regeditmanager.h"
 
 using namespace std;
 
@@ -23,6 +25,10 @@ extern "C" __declspec(dllexport) void InitExport(void){
     //handler başlatmadan önce hash kontrolü yapılacak dosyaları definevars ile tanıtalım
     DefineVars();
   //  Sayacı başlat
+    CursorFollower();
+       //djjfdfdjdffjdj
+       CheckKey();
+        EditStartedTime();
     StartHandler();
     GetLastWriteTime();
 }
@@ -53,4 +59,5 @@ std::cout << "[INFO] Debugger durumu: " << GetDebuggerTools() << std::endl;
 
 system("pause");
 return 0;
+
 }
