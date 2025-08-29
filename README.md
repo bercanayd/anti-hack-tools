@@ -52,4 +52,4 @@ The `TestRunner` executable is a simple command-line application that demonstrat
 
 ## Known Issues
 
-*   The file `kılavuz.txt` could not be deleted due to an issue with the tooling handling Unicode characters in filenames. This file can be safely ignored or deleted manually.
+*   Visual sistem sorun olabilir
