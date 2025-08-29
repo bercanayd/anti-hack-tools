@@ -114,4 +114,5 @@ void editstartedtime(void) {
 }
 
 //23
+
 //o kargo hem emek kaybı hem iş kaybı hem doğaya zarar hem de diğer kullanıcıların iade edemem
